@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/search', (req, res) => {
-  console.log(req.query.query);
+  console.log(`Searching for ${req.query.query}`);
   axios.get('https://api.yelp.com/v3/businesses/search', {
     headers: {
       Authorization: `Bearer ${API_KEY}`
@@ -22,8 +22,8 @@ app.get('/search', (req, res) => {
     }
   })
   .then(data => {
-    console.log(data.data);
-    res.send('success');
+    console.log('sending data');
+    res.send(data.data);
   })
   .catch(err => {
     console.log(err);

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Coffee from './components/Coffee.jsx';
+import CoffeeshopList from './components/CoffeeshopList.jsx';
 import Search from './components/Search.jsx';
 import axios from 'axios';
 
@@ -13,12 +13,18 @@ class App extends React.Component {
     this.search = this.search.bind(this);
   };
 
+  componentDidMount() {
+  }
+
   search(query) {
     axios.get('/search', {
       params: {query}
     } )
     .then(res => {
-      console.log(res);
+      this.setState({
+        locations: res.data.businesses
+      })
+      console.log(this.state.locations);
     })
     .catch(err => {
       console.log(err);
@@ -28,8 +34,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Coffee />
+        <div className='test'>i want coffee</div>
         <Search search={this.search}/>
+        <CoffeeshopList locations={this.state.locations}/>
       </div>
     )
   };

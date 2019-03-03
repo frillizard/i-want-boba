@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Coffee = ({shop}) => {
+const Boba = ({shop}) => {
     return (
       <div>
         <li>
-          <div>
+          <a href={shop.url}>
             {shop.name}
-          </div>
+          </a>
         </li>
       </div>
     )
 }
 
-export default Coffee;
+export default Boba;

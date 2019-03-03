@@ -18,7 +18,7 @@ app.get('/search', (req, res) => {
     },
     params: {
       location: req.query.query,
-      categories: 'coffee'
+      categories: 'bubbletea'
     }
   })
   .then(data => {

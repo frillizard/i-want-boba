@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CoffeeshopList from './components/CoffeeshopList.jsx';
+import BobashopList from './components/BobashopList.jsx';
 import Search from './components/Search.jsx';
 import axios from 'axios';
 
@@ -34,9 +34,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className='test'>i want coffee</div>
+        <div className='test'>i want boba</div>
         <Search search={this.search}/>
-        <CoffeeshopList locations={this.state.locations}/>
+        <BobashopList locations={this.state.locations}/>
       </div>
     )
   };

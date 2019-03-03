@@ -9,11 +9,11 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  background: #AA6B39;
+  background: #AD896B;
 }
 
 .test {
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 4rem;
   font-family: 'Dancing Script', cursive;
 }

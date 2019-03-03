@@ -1,16 +1,16 @@
 import React from 'react';
 
 class Search extends React.Component{
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      search: ''
+      query: 'Austin'
     };
   };
 
   handleChange(e) {
     this.setState({
-      search: e.target.value
+      query: e.target.value
     })
   };
 
@@ -23,10 +23,13 @@ class Search extends React.Component{
             id='search' 
             type='search'
             placeholder='Search by city (eg. Austin)' 
-            value={this.state.search} 
+            value={this.state.query} 
             onChange={this.handleChange.bind(this)}
           ></input>
-          <button type='submit'>Search</button>
+          <button 
+            type='button'
+            onClick={() => this.props.search(this.state.query)}
+          >Search</button>
         </form>
       </div>
     )

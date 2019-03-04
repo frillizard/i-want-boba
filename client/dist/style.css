@@ -2,18 +2,105 @@
 
 html, body {
   font-size: 10px;
-  max-width: 100%;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background: #AD896B;
 }
 
-.test {
+.wrapper {
+  display: grid;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.list-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(auto, auto);
+}
+
+.list-item-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+}
+
+.title {
   color: #FFFFFF;
-  font-size: 4rem;
+  font-size: 10vw;
   font-family: 'Dancing Script', cursive;
+  padding-top: 30vh;
+  margin: 0 auto;
+  text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.4);
+}
+
+.search-container {
+  margin: 5px auto;
+}
+
+input[type=search] {
+  width: 30vw;
+  height: 33px;
+  font-size: 16px;
+  padding-left: 10px;
+  vertical-align: bottom;
+}
+
+.submit-button {
+  border: none;
+  cursor: pointer;
+  height: 33px;
+  padding: 0;
+  vertical-align: bottom;
+}
+
+svg {
+  background-color: #000000;
+  border-radius: 0 2px 2px 0;
+  fill: white;
+  height: 33px;
+  min-width: 24px;
+  padding: 0 7px;
+  width: 24px;
+}
+
+.list-item {
+  min-height: 100px;
+  max-height: 250px;
+  height: 30vw;
+  margin: 2vw;
+  display: flex;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  box-shadow: 0 0 1em #80808066;
+  overflow: hidden;
+}
+
+.list-item-title {
+  font-size: 3em;
+  margin: 10px;
+  margin-right: 5px;
+}
+
+.list-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 800px) {
+  .list-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .list-item-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
 }
